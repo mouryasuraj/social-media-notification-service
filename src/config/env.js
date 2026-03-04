@@ -1,10 +1,15 @@
-
 import dotenv from 'dotenv'
-dotenv.config({ path: `.env.${process.env.NODE_ENV || "local"}` })
+
+dotenv.config({path:`.env.${process?.env?.NODE_ENV || "local"}`})
 
 export const env = {
-    MONGODB_URI: process.env.MONGODB_URI,
-    SECRET_KEY: process.env.SECRET_KEY,
-    SALT_ROUND: process.env.SALT_ROUND,
-    PORT: process.env.PORT,
-};
+    PORT:process.env.PORT,
+    KAFKA_BROKER:process.env.KAFKA_BROKER,
+    KAFKA_GROUP_ID:process.env.KAFKA_GROUP_ID,
+    SMTP_KEY:process.env.SMTP_KEY,
+    SMTP_SERVER:process.env.SMTP_SERVER,
+    SMTP_PORT:process.env.SMTP_PORT,
+    SMTP_LOGIN:process.env.SMTP_LOGIN,
+    MAIL_FROM:process.env.MAIL_FROM,
+    OTP_TTL:process.env.OTP_TTL,
+}

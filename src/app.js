@@ -1,17 +1,18 @@
-import express from 'express'
-import {connectDB, env} from './config/index.js'
+import express from "express";
+import { env } from "./config/index.js";
+import { connectConsumer } from "./consumers/consumer.js";
+import { startConsumer } from "./consumers/startConsumer.js";
 
-const app = express()
+const app = express();
 
-// Middleware
-app.use(express.json())
+connectConsumer()
+  .then(() => {
+    startConsumer()
 
-// DB Connection
-connectDB().then(() => {
-    console.log("DB Connection Established")
-    app.listen(3000, () => {
-        console.log(`Server is running on port: ${env.PORT}`)
-    })
-}).catch((error) => {
-    console.log(error?.message)
-})
+    app.listen(env.PORT, () => {
+      console.log(`Server is running on port: ${env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log("kafka connnection failed: ", err);
+  });

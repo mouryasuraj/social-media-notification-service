@@ -1,29 +1,34 @@
 {
-  "name": "server",
+  "name": "social-media-notification-service",
   "version": "1.0.0",
-  "description": "Backend using nodejs, express, mongodb",
+  "description": "This project is used to send notification to user",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./src/app.js",
-    "dev": " cross-env NODE_ENV=local nodemon ./src/app.js"
+    "dev": "cross-env NODE_ENV=local nodemon ./src/app.js",
+    "start": "cross-env NODE_ENV=production node ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mouryasuraj/social-media-notification-service.git"
   },
   "keywords": [
-    "js",
-    "nodejs",
-    "mongoose"
+    "notification",
+    "javascrip",
+    "nodejs"
   ],
   "author": "mouryasuraj",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mouryasuraj/social-media-notification-service/issues"
+  },
+  "homepage": "https://github.com/mouryasuraj/social-media-notification-service#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
     "cross-env": "^10.1.0",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^9.1.5",
-    "nodemon": "^3.1.10",
-    "validator": "^13.15.26"
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "kafkajs": "^2.2.4",
+    "nodemailer": "^8.0.1",
+    "nodemon": "^3.1.14"
   }
 }
