@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config({path:`.env.${process?.env?.NODE_ENV || "local"}`})
 
 export const env = {
-    PORT:process.env.PORT,
+    PORT:process.env.PORT || 3001,
     KAFKA_BROKER:process.env.KAFKA_BROKER,
     KAFKA_GROUP_ID:process.env.KAFKA_GROUP_ID,
     SMTP_KEY:process.env.SMTP_KEY,
